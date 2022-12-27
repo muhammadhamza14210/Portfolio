@@ -26,13 +26,13 @@ const Work = () => {
                         
 
                         <div className = 'pt-8 text-center'>
-                            <a href='https://muhammadhamza14210.github.io/Tesla-Clone/' target = '_blank'>
+                            <a href='https://muhammadhamza14210.github.io/Tesla-Clone/' target = '_blank' rel='noreferrer'>
                                 <button className = 'text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>
                                     Demo
                                 </button>
                             </a>
 
-                            <a href='https://github.com/muhammadhamza14210/Tesla-Clone' target = '_blank'>
+                            <a href='https://github.com/muhammadhamza14210/Tesla-Clone' target = '_blank' rel='noreferrer'>
                                 <button className = 'text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>
                                 Code
                                 </button>
@@ -52,13 +52,13 @@ const Work = () => {
                         
 
                         <div className = 'pt-8 text-center'>
-                            <a href='https://muhammadhamza14210.github.io/Weather-Application/' target = '_blank'>
+                            <a href='https://muhammadhamza14210.github.io/Weather-Application/' target = '_blank' rel='noreferrer'>
                                 <button className = 'text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>
                                     Demo
                                 </button>
                             </a>
 
-                            <a href='https://github.com/muhammadhamza14210/Weather-Application' target = '_blank'>
+                            <a href='https://github.com/muhammadhamza14210/Weather-Application' target = '_blank' rel='noreferrer'>
                                 <button className = 'text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>
                                 Code
                                 </button>
@@ -78,13 +78,13 @@ const Work = () => {
                         
 
                         <div className = 'pt-8 text-center'>
-                            <a href='https://github.com/muhammadhamza14210/Meta-Messenger-2.0' target = '_blank'>
+                            <a href='https://github.com/muhammadhamza14210/Meta-Messenger-2.0' target = '_blank' rel='noreferrer'>
                                 <button className = 'text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>
                                     Demo
                                 </button>
                             </a>
 
-                            <a href='https://github.com/muhammadhamza14210/Meta-Messenger-2.0' target = '_blank'>
+                            <a href='https://github.com/muhammadhamza14210/Meta-Messenger-2.0' target = '_blank' rel='noreferrer'>
                                 <button className = 'text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg'>
                                 Code
                                 </button>
