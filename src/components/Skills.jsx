@@ -5,6 +5,7 @@ import JavaScript from '../assets/javascript.png'
 import Github from '../assets/github.png'
 import Python from '../assets/python.png'
 import C from '../assets/c.png'
+import SQL from '../assets/sql.png'
 
 const Skills = () => {
   return (
@@ -45,6 +46,11 @@ const Skills = () => {
                 <div className = 'shadow-md shadow-[#040c16] hover:scale-110 duration-300'> 
                     <img className = 'w-20 mx-auto' src = {C} alt = 'C icon'></img>
                     <p className = 'py-4'>C</p>
+                </div>
+
+                <div className = 'shadow-md shadow-[#040c16] hover:scale-110 duration-300'> 
+                    <img className = 'w-20 mx-auto' src = {SQL} alt = 'SQL icon'></img>
+                    <p className = 'py-4'>SQL</p>
                 </div>
 
             </div>
