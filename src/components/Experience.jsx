@@ -11,14 +11,16 @@ const Experience = () => {
             </div>
 
             <div className='border-1 rounded-[10px] bg-gray-600 p-3 '>
-                <h1 className='py-4 font-bold text-lg'>Risk Analyst Intern: <span className='text-sm italic'>May 2022 - August 2022</span></h1>
-                <p>Creating VAR Sheets using Excel in order to have <b>VAR</b> be implemented the first time.</p>
-                <p>Demonstrated expertise in preparing daily reports, including (PnL) analysis, improved <b>20%</b> efficiency.</p>
-                <p>Provided support to the Risk Department by executing assigned daily tasks.</p>
-                <p>Skilled in managing trade books, including Petrochemicals, Gasoil, Dry Commodities, Bunkering Derivatives on <b>Aspect</b>.</p>
-                <p>Assisted the team with creating trades for testing purposes to transfer data from <b>Aspect</b> and <b>Oracle</b> to <b>Microsoft 365</b>.</p>
+                <h1 className='pb-1 font-bold text-xl'>Risk Analyst Intern</h1>
+                <p className='text-sm italic pb-1'>May 2022 - August 2022</p>
+                  <ul className='p-4 list-disc'>
+                  <li>Creating VAR Sheets using Excel in order to have <b>VAR</b> be implemented the first time.</li>
+                  <li>Demonstrated expertise in preparing daily reports, including (PnL) analysis, improved <b>20%</b> efficiency.</li>
+                  <li>Provided support to the Risk Department by executing assigned daily tasks.</li>
+                  <li>Skilled in managing trade books, including Petrochemicals, Gasoil, Dry Commodities, Bunkering Derivatives on <b>Aspect</b>.</li>
+                  <li>Assisted the team with creating trades for testing purposes to transfer data from <b>Aspect</b> and <b>Oracle</b> to <b>Microsoft 365</b>.</li>
+                  </ul>
             </div>
-
         </div>
     </div>
   )
