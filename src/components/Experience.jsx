@@ -14,10 +14,12 @@ const Experience = () => {
                 <h1 className='pb-1 font-bold text-xl'>Risk Analyst Intern</h1>
                 <p className='text-sm italic pb-1'>May 2022 - August 2022</p>
                   <ul className='p-4 list-disc'>
-                  <li>Creating <b>VAR</b> Sheets using <b>Excel</b> in order to have <b>VAR</b> be implemented the first time.</li>
-                  <li>Demonstrated expertise in preparing daily reports, including (PnL) analysis, improved <b>20%</b> efficiency.</li>
-                  <li>Provided support to the Risk Department by executing assigned daily tasks.</li>
+                  <li>Demonstrated expertise in preparing daily reports, including <b>P/L</b> and <b>VAR</b> analysis, improved <b>20%</b> efficiency.</li>
+                  <li>Reviewing daily derivative positions to ascertain free equity and notifying leadership team regarding margin call requirements.</li>
                   <li>Skilled in managing trade books, including Petrochemicals, Gasoil, Dry Commodities, Bunkering Derivatives on <b>Aspect</b>.</li>
+                  <li>Pricing and MTM valuation for Gasoil and Petrochemicals products.</li>
+                  <li>Entering physical and derivative trades in trading software in <b>Aspect</b>.</li>
+                  <li>Monitor positions and compare against limits, escalate limit breaches and get resolutions through collaboration.</li>
                   <li>Assisted the team with creating trades for testing purposes to transfer data from <b>Aspect</b> and <b>Oracle</b> to <b>Microsoft 365</b>.</li>
                   </ul>
             </div>

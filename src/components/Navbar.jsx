@@ -4,6 +4,7 @@ import Logo from '../assets/Logo.png';
 import { HiOutlineMail } from 'react-icons/hi';
 import {BsFillPersonLinesFill} from 'react-icons/bs';
 import {Link} from 'react-scroll';
+import Resume from '../assets/Muhammad-Hamza-Resume.pdf';
 
 
 const Navbar = () => {
@@ -69,7 +70,7 @@ const Navbar = () => {
 
                 <ul>
                     <li className = 'w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-black'>
-                        <a className = 'flex justify-between items-center w-full text-grey-300' href='https://drive.google.com/file/d/1wrxZSyAF94oBmOXIMPhZhf_enisNDNar/view?usp=share_link' target='_blank' rel='noreferrer'>
+                        <a className = 'flex justify-between items-center w-full text-grey-300' href={Resume} target='_blank' rel='noreferrer'>
                             Resume <BsFillPersonLinesFill size={30}/></a>
                     </li>
                 </ul>
