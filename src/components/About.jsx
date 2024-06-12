@@ -25,7 +25,7 @@ const About = () => {
           </div>
 
           <div>
-            <p> A second year computer science student looking to step in the tech industry with an interest in software development, cyber
+            <p> A third year computer science student looking to step in the tech industry with an interest in software development, cyber
               security and data science.I'm passionate in developing software that improves the lives of
               those around me. As a university student i try to look for opportunity wherever
               possible. I'm dedicated to improve my skills and exceed expectations to build 
