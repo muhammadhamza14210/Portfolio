@@ -1,10 +1,15 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const PageContainer = ({ name, children }) => {
   return (
-    <section
+    <motion.section
       id={name}
-      className="relative w-full min-h-screen bg-gradient-to-br from-[#2C3E50] via-[#6A0572] to-[#DDA0DD] overflow-auto"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }} 
+      transition={{ duration: 1.2, ease: "easeOut" }} 
+      className="relative w-full min-h-screen bg-gradient-to-br from-[#1E293B] via-[#4C1D95] to-[#8B5CF6] 
+      overflow-auto"
     >
       {/* Animated Background Overlay */}
       <div className="absolute inset-0 z-0">
@@ -15,7 +20,7 @@ const PageContainer = ({ name, children }) => {
       <main className="relative z-10 max-w-[1200px] mx-auto px-8 py-8 text-center sm:text-left">
         {children}
       </main>
-    </section>
+    </motion.section>
   );
 };
 
