@@ -1,6 +1,6 @@
-import AttendEase from "../assets/AttendEase.png";
-import Blogify from "../assets/Blogify.png";
-import Kayanou from "../assets/Kayanou.png";
+import AttendEase from "../../public/AttendEase.png";
+import Blogify from "../../public/Blogify.png";
+import Kayanou from "../../public/Kayanou.png";
 
 const experienceData = [
   {
