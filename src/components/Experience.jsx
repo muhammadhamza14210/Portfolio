@@ -1,98 +1,68 @@
 import React from "react";
+import PageContainer from "./PageContainer";
+import { experienceData } from "../utils/constants";
 
 const Experience = () => {
   return (
-    <div
-      name="experience"
-      className="w-full md:h-screen bg-[#0a192f] text-gray-300"
-    >
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
-        <div className="pb-8">
-          <p className="text-4xl font-bold inline border-b-4 border-red-400">
-            Experience
-          </p>
-        </div>
+    <PageContainer name="experience">
+      <div className="w-full text-gray-300 flex flex-col items-center py-16 px-4">
+        <div className="max-w-4xl w-full relative">
+          {/* Section Title */}
+          <div className="text-center pb-12">
+            <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-yellow-500">
+              Experience
+            </h2>
+          </div>
 
-        <div className="shadow-lg shadow-[#040c16] rounded-[10px] p-3">
-          <h1 className="pb-1 font-bold text-xl">Business Analyst Intern</h1>
-          <p className="text-sm italic pb-1">
-            <span className="font-bold">Interact Health Pro :</span> Oct 2024 -
-            Feb 2024
-          </p>
-          <ul className="p-4 list-disc">
-            <li>
-              Successfully integrated data from Keap and Squarespace into the
-              Groove platform, resulting in a noteworthy 20% reduction in
-              operational costs.
-            </li>
-            <li>
-              Implemented GotBackUp for seamless business synchronization and
-              backup, reducing downtime by 10%.
-            </li>
-          </ul>
-        </div>
+          {/* Timeline Container */}
+          <div
+            className="relative space-y-16 before:absolute before:left-[25px] before:top-0 
+          before:h-full before:w-1 before:bg-gradient-to-b from-red-500 to-yellow-400"
+          >
+            {experienceData.map((experience, index) => (
+              <div key={index} className="relative flex items-start group">
+                {/* Timeline Marker */}
+                <div
+                  className="absolute left-4 top-0 w-6 h-6 bg-gradient-to-br from-red-500 
+                to-yellow-400 rounded-full border-4 border-gray-900 shadow-md group-hover:scale-125 
+                transition-transform duration-300"
+                ></div>
 
-        <div className="shadow-lg shadow-[#040c16] rounded-[10px] p-3">
-          <h1 className="pb-1 font-bold text-xl">Sales and Marketing Intern</h1>
-          <p className="text-sm italic pb-1">
-            <span className="font-bold">Al Ghurair Investment :</span> May 2023
-            - Aug 2023
-          </p>
-          <ul className="p-4 list-disc">
-            <li>
-              {" "}
-              Led the Recycling initiative with a budget allocation of AED50K,
-              focusing on the responsible disposable and repurposing of Glitch
-              Balls which is now undertaken for manufacturing of stationaries.
-            </li>
-            <li>
-              Create content for all social media platforms, including Facebook,
-              Instagram, and the brand website increasing page traffic by 10%.
-            </li>
-            <li>
-              Develop, maintain, and strengthen relationships with the media,
-              bloggers, and influencers through public relations. Ensure that
-              the brands receive adequate media coverage for the new
-              entertainment center Glitch.
-            </li>
-          </ul>
-        </div>
+                {/* Experience Box */}
+                <div
+                  className="ml-16 bg-gray-800/80 p-6 sm:p-8 rounded-2xl shadow-lg transition-all 
+                duration-500 hover:scale-105 hover:shadow-red-400/40 border border-gray-700"
+                >
+                  {/* Job Role */}
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-yellow-400 mb-2">
+                    {experience.role}
+                  </h3>
 
-        <div className="pb-10"></div>
+                  {/* Company Name */}
+                  <p className="text-lg font-semibold text-gray-300 italic mb-2">
+                    {experience.company}
+                  </p>
 
-        <div className="shadow-lg shadow-[#040c16] rounded-[10px] p-3 ">
-          <h1 className="pb-1 font-bold text-xl">Risk Analyst Intern</h1>
-          <p className="text-sm italic pb-1">
-            <span className="font-bold">Al Ghurair Energy:</span> May 2022 -
-            August 2022
-          </p>
-          <ul className="p-4 list-disc">
-            <li>
-              Demonstrated expertise in preparing daily reports, including{" "}
-              <b>P/L</b> and <b>VAR</b> analysis, improved <b>20%</b>{" "}
-              efficiency.
-            </li>
-            <li>
-              Reviewing daily derivative positions to ascertain free equity and
-              notifying leadership team regarding margin call requirements.
-            </li>
-            <li>
-              Skilled in managing trade books, including Petrochemicals, Gasoil,
-              Dry Commodities, Bunkering Derivatives on <b>Aspect</b>.
-            </li>
-            <li>
-              Monitor positions and compare against limits, escalate limit
-              breaches and get resolutions through collaboration.
-            </li>
-            <li>
-              Assisted the team with creating trades for testing purposes to
-              transfer data from <b>Aspect</b> and <b>Oracle</b> to{" "}
-              <b>Microsoft 365</b>.
-            </li>
-          </ul>
+                  {/* Time Period */}
+                  <p className="text-sm text-gray-400 mb-4">
+                    {experience.period}
+                  </p>
+
+                  {/* Job Responsibilities */}
+                  <ul className="list-disc list-inside space-y-2 text-sm sm:text-base">
+                    {experience.details.map((point, i) => (
+                      <li key={i} className="text-gray-300">
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 };
 

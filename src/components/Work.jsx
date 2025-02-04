@@ -1,264 +1,79 @@
 import React from "react";
-import Tesla from "../assets/Tesla.jpg";
-import Weather from "../assets/Weather.jpg";
-import Meta from "../assets/meta.jpg";
-import Chatbot from "../assets/chatbot.png";
-import QRScanner from "../assets/QRScanner.png";
-import Blogify from "../assets/blogify.png";
-import Fitness from "../assets/Fitness.jpg";
+import PageContainer from "./PageContainer";
+import { projects, techColors } from "../utils/constants";
 
 const Work = () => {
   return (
-    <div name="work" className="w-full md:h-screen bg-[#0a192f] text-gray-300">
-      <div className="max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full">
-        <div className="pt-32">
-          <p className="text-4xl font-bold inline border-b-4 border-red-400">
+    <PageContainer name="work">
+      <div className="w-full flex flex-col items-center py-16 px-6">
+        {/* Section Title */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-yellow-500">
             Projects
+          </h2>
+          <p className="text-gray-400 mt-3 text-lg">
+            A showcase of my recent projects.
           </p>
-          <p className="py-4">Check out some of my recent projects!</p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          <div
-            style={{ backgroundImage: `url(${Tesla})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center mx-auto items-center content-div"
-          >
-            {/*Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Tesla Application
-              </span>
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl w-full">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="bg-gray-900/90 p-4 rounded-xl shadow-lg hover:shadow-yellow-500/50 transition-all duration-500"
+            >
+              {/* Project Image */}
+              <div className="w-full h-48 rounded-lg overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-              <div className="pt-8 text-center">
+              {/* Project Title */}
+              <h3 className="text-lg font-bold text-yellow-400 mt-4">
+                {project.title}
+              </h3>
+
+              {/* Tech Stack Tags */}
+              <div className="flex flex-wrap gap-2 mt-3">
+                {project.techStack.map((tech, i) => (
+                  <span
+                    key={i}
+                    className={`text-xs px-3 py-1 rounded-full font-semibold ${techColors[tech]}`}
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
+
+              {/* Buttons */}
+              <div className="flex justify-between mt-4">
                 <a
-                  href="https://muhammadhamza14210.github.io/Tesla-Clone/"
+                  href={project.demoLink}
                   target="_blank"
                   rel="noreferrer"
+                  className="w-1/2 text-center bg-yellow-500 text-gray-900 py-2 rounded-lg font-bold hover:bg-yellow-600 transition-all duration-300"
                 >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
+                  Demo
                 </a>
 
                 <a
-                  href="https://github.com/muhammadhamza14210/Tesla-Clone"
+                  href={project.codeLink}
                   target="_blank"
                   rel="noreferrer"
+                  className="w-1/2 text-center bg-gray-700 text-white py-2 rounded-lg font-bold hover:bg-gray-600 transition-all duration-300 ml-2"
                 >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
+                  Code
                 </a>
               </div>
             </div>
-          </div>
-
-          <div
-            style={{ backgroundImage: `url(${Weather})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center mx-auto items-center content-div"
-          >
-            {/*Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Weather Application
-              </span>
-
-              <div className="pt-8 text-center">
-                <a
-                  href="https://muhammadhamza14210.github.io/Weather-Application/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-
-                <a
-                  href="https://github.com/muhammadhamza14210/Weather-Application"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{ backgroundImage: `url(${Meta})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center mx-auto items-center content-div"
-          >
-            {/*Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                Meta Messenger App
-              </span>
-
-              <div className="pt-8 text-center">
-                <a
-                  href="https://github.com/muhammadhamza14210/Meta-Messenger-2.0"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-
-                <a
-                  href="https://github.com/muhammadhamza14210/Meta-Messenger-2.0"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{ backgroundImage: `url(${Chatbot})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center mx-auto items-center content-div"
-          >
-            {/*Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider">
-                ChatGPT AI App
-              </span>
-
-              <div className="pt-8 text-center">
-                <a
-                  href="https://chat-gpt-ai-muhammad-hamza.vercel.app"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-
-                <a
-                  href="https://github.com/muhammadhamza14210/ChatGPT-AI-App"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{ backgroundImage: `url(${QRScanner})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center mx-auto items-center content-div"
-          >
-            {/*Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider text-center">
-                AttendEase Application
-              </span>
-
-              <div className="pt-8 text-center">
-                <a
-                  href="https://github.com/CMPUT301-W24-T54/AttendEase.git"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-
-                <a
-                  href="https://github.com/CMPUT301-W24-T54/AttendEase.git"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{ backgroundImage: `url(${Blogify})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center mx-auto items-center content-div"
-          >
-            {/*Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider text-center">
-                Blogify Application
-              </span>
-
-              <div className="pt-8 text-center">
-                <a
-                  href="https://hamzas-blog.onrender.com/"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-
-                <a
-                  href="https://github.com/muhammadhamza14210/Blog.git"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div
-            style={{ backgroundImage: `url(${Fitness})` }}
-            className="shadow-lg shadow-[#040c16] group container rounded-md flex justify-center mx-auto items-center content-div"
-          >
-            {/*Hover Effect */}
-            <div className="opacity-0 group-hover:opacity-100">
-              <span className="text-2xl font-bold text-white tracking-wider text-center">
-                Fitness Application
-              </span>
-
-              <div className="pt-8 text-center">
-                <a
-                  href="https://github.com/muhammadhamza14210/FitnessTracker.git"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Demo
-                  </button>
-                </a>
-
-                <a
-                  href="https://github.com/muhammadhamza14210/FitnessTracker.git"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  <button className="text-center rounded-lg px-4 py-3 m-2 bg-white text-gray-700 font-bold text-lg">
-                    Code
-                  </button>
-                </a>
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-    </div>
+    </PageContainer>
   );
 };
 

@@ -1,82 +1,73 @@
-import React, {useState} from 'react';
-import {FaBars, FaTimes, FaGithub, FaLinkedin} from 'react-icons/fa';
-import Logo from '../assets/Logo.png';
-import { HiOutlineMail } from 'react-icons/hi';
-import {BsFillPersonLinesFill} from 'react-icons/bs';
-import {Link} from 'react-scroll';
-import Resume from '../assets/Muhammad-Hamza-Resume.pdf';
-
+import React, { useState } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-scroll";
 
 const Navbar = () => {
+  const [nav, setNav] = useState(false);
+  const handleToggle = () => setNav(!nav);
 
-    const [nav,setNav] = useState(false);
-    const handleClick = () => setNav(!nav);
+  const navLinks = [
+    { name: "Home", to: "home" },
+    { name: "About", to: "about" },
+    { name: "Skills", to: "skills" },
+    { name: "Experience", to: "experience" },
+    { name: "Projects", to: "work" },
+    { name: "Contact", to: "contact" }
+  ];
 
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300'>
-        <div>
-            <img src={Logo} alt = "Logo" style={{width:'50px'}} />
-        </div>
-       
-        {/*Menu*/}
-
-        <ul className='hidden md:flex cursor-pointer'>
-            <li><Link to="home" spy={true} smooth={true}  duration={500}>Home</Link></li>
-            <li><Link to="about" spy={true} smooth={true}  duration={500}>About</Link></li>
-            <li><Link to="skills" spy={true} smooth={true}  duration={500}>Skills</Link></li>
-            <li><Link to="experience" spy={true} smooth={true}  duration={500}>Experience</Link></li>
-            <li><Link to="work" spy={true} smooth={true}  duration={500}>Projects</Link></li>
-            <li><Link to="contact" spy={true} smooth={true}  duration={500}>Contact</Link></li>
+    <nav className="fixed w-full z-50 backdrop-blur-lg bg-opacity-70 shadow-md">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between lg:justify-center items-center">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex space-x-8">
+          {navLinks.map((link) => (
+            <li key={link.name} className="relative group">
+              <Link
+                to={link.to}
+                smooth={true}
+                duration={500}
+                className="text-gray-100 hover:text-blue-400 transition-colors cursor-pointer"
+              >
+                {link.name}
+              </Link>
+              {/* Underline effect on hover */}
+              <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 group-hover:w-full transition-all duration-300"></span>
+            </li>
+          ))}
         </ul>
 
-        {/*Hamburger*/}
-            <div onClick = {handleClick} className='md:hidden absolute right-[30px] z-10 text-[20px] cursor-pointer'>
-                {!nav ? <FaBars /> : <FaTimes/ >}
-            </div>
+        {/* Mobile Hamburger Icon */}
+        <div className="md:hidden z-50" onClick={handleToggle}>
+          {nav ? (
+            <FaTimes className="text-gray-100 text-3xl" />
+          ) : (
+            <FaBars className="text-gray-100 text-3xl" />
+          )}
+        </div>
+      </div>
 
-            {/*Mobile Menu*/}
-            <ul className={!nav ? 'hidden':'absolute top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center cursor-pointer'}>
-                <li className = "py-6 text-3xl"><Link onClick ={handleClick} to="home" spy={true} smooth={true}  duration={500}>Home</Link></li>
-                <li className = "py-6 text-3xl"><Link onClick ={handleClick} to="about" spy={true} smooth={true}  duration={500}>About</Link></li>
-                <li className = "py-6 text-3xl"><Link onClick ={handleClick} to="skills" spy={true} smooth={true}  duration={500}>Skills</Link></li>
-                <li className = "py-6 text-3xl"><Link onClick ={handleClick} to="experience" spy={true} smooth={true}  duration={500}>Experience</Link></li>
-                <li className = "py-6 text-3xl"><Link onClick ={handleClick} to="work" spy={true} smooth={true}  duration={500}>Projects</Link></li>
-                <li className = "py-6 text-3xl"><Link onClick ={handleClick} to="contact" spy={true} smooth={true}  duration={500}>Contact</Link></li>
-            </ul>
+      {/* Mobile Menu Overlay */}
+      {nav && (
+        <div className="md:hidden bg-gray-900 bg-opacity-95 absolute top-0 left-0 w-full h-screen flex flex-col justify-center items-center transition-all duration-300">
+          <ul className="space-y-8">
+            {navLinks.map((link) => (
+              <li key={link.name} className="text-3xl">
+                <Link
+                  onClick={handleToggle}
+                  to={link.to}
+                  smooth={true}
+                  duration={500}
+                  className="text-gray-100 hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </nav>
+  );
+};
 
-
-        {/*Social Icons*/}
-            <div className='hidden lg:flex fixed flex-col top-[35%] left-0'>
-                <ul>
-                    <li className = 'w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-blue-600'>
-                        <a className = 'flex justify-between items-center w-full text-grey-300' href='https://www.linkedin.com/in/muhammad-hamza-4578211ab/' target='_blank' rel='noreferrer'>
-                            LinkedIn <FaLinkedin size={30}/></a>
-                    </li>
-                </ul>
-
-                <ul>
-                    <li className = 'w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-green-600'>
-                        <a className = 'flex justify-between items-center w-full text-grey-300' href='mailto:muhammadhamza14210@gmail.com' target='_blank' rel='noreferrer'>
-                            Email <HiOutlineMail size={30}/></a>
-                    </li>
-                </ul>
-
-                <ul>
-                    <li className = 'w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-black'>
-                        <a className = 'flex justify-between items-center w-full text-grey-300' href='https://github.com/muhammadhamza14210' target='_blank' rel='noreferrer'>
-                            Github <FaGithub size={30}/></a>
-                    </li>
-                </ul>
-
-                <ul>
-                    <li className = 'w-[160px] h-[60px] flex justify-between items-center ml-[-100px] hover:ml-[-10px] duration-300 bg-black'>
-                        <a className = 'flex justify-between items-center w-full text-grey-300' href={Resume} target='_blank' rel='noreferrer'>
-                            Resume <BsFillPersonLinesFill size={30}/></a>
-                    </li>
-                </ul>
-            </div>
-    </div>
-  )
-}
-
-export default Navbar
+export default Navbar;
