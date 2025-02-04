@@ -1,6 +1,6 @@
 import React from "react";
 import PageContainer from "./PageContainer";
-import Profile from "../../public/profilepic.jpeg";
+import Profile from "../assets/profilepic.png";
 
 const About = () => {
   return (

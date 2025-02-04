@@ -1,7 +1,7 @@
 import React from "react";
 import PageContainer from "./PageContainer";
 import { FaGithub, FaLinkedin, FaEnvelope, FaDownload } from "react-icons/fa";
-import Resume from "../../public/HamzaLatestResume-Jan2025.pdf";
+import Resume from "../assets/HamzaLatestResume-Jan2025.pdf";
 
 const Contact = () => {
   return (
