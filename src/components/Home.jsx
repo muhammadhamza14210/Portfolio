@@ -91,7 +91,7 @@ const Home = () => {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1 }}
-          className="mt-4 flex lg:justify-start justify-center"
+          className="mt-4 flex lg:justify-start justify-center relative z-100"
         >
           <motion.button
             whileHover={{ scale: 1.1, rotate: [0, 2, -2, 2, 0] }}
