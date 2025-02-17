@@ -8,8 +8,7 @@ const PageContainer = ({ name, children }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }} 
       transition={{ duration: 1.2, ease: "easeOut" }} 
-      className="relative w-full min-h-screen bg-gradient-to-br from-[#1E293B] via-[#4C1D95] to-[#8B5CF6] 
-      overflow-auto"
+      className="relative w-full min-h-screen bg-gradient-to-br from-[#1E293B] via-[#4C1D95] to-[#8B5CF6]"
     >
       {/* Animated Background Overlay */}
       <div className="absolute inset-0 z-0">
